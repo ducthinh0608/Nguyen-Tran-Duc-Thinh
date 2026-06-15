@@ -1,26 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <title>Danh mục Nhà đất Bán</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục Nhà đất Bán | Sàn Giao Dịch Cao Cấp</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body>
-    <h1>Chào mừng đến với Sàn Giao dịch Nhà đất</h1>
-    <p>Khám phá các ngôi nhà tuyệt đẹp đang được rao bán:</p>
+<body class="bg-slate-50 text-slate-800 antialiased">
 
-    <!-- Khu vực hiển thị nhà -->
-    <div>
-        <h3>Căn hộ hạng sang số 1</h3>
-        <iframe src="https://assets.pinterest.com/ext/embed.html?id=720998221619847083" height="560" width="345" frameborder="0" scrolling="no"></iframe>
-    </div>
+    <header class="bg-white border-b border-slate-200 py-12 px-4 text-center sticky top-0 z-50 shadow-sm backdrop-blur-md bg-white/90">
+        <div class="max-w-4xl mx-auto">
+            <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Không gian sống mơ ước</span>
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-4">Sàn Giao Dịch Nhà Đất Cao Cấp</h1>
+            <p class="text-slate-500 max-w-xl mx-auto text-sm md:text-base">
+                Khám phá các bất động sản tuyệt đẹp, sang trọng với vị trí đắc địa đang được rao bán.
+            </p>
+        </div>
+    </header>
 
-    <div>
-        <h3>Biệt thự sân vườn</h3>
-        <iframe src="https://assets.pinterest.com/ext/embed.html?id=1150880879765984011" height="456" width="345" frameborder="0" scrolling="no"></iframe>
-    </div>
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+                <div>
+                    <div class="bg-slate-100 flex justify-center items-center overflow-hidden h-[450px]">
+                        <iframe src="https://assets.pinterest.com/ext/embed.html?id=720998221619847083" class="w-full h-full border-0" scrolling="no"></iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block bg-blue-50 text-blue-600 text-xs font-semibold px-2.5 py-1 rounded-full mb-3">Căn hộ</span>
+                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Căn hộ hạng sang số 1</h3>
+                        <p class="text-sm text-slate-400 mt-1 flex items-center">
+                            📍 Quận 1, TP. Hồ Chí Minh
+                        </p>
+                        <div class="flex items-center gap-4 mt-4 text-slate-500 text-sm border-t border-b border-slate-100 py-3">
+                            <span>🛌 2 PN</span>
+                            <span>🛁 2 WC</span>
+                            <span>📐 85 m²</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 flex items-center justify-between mt-auto">
+                    <span class="text-2xl font-extrabold text-blue-600">5.2 Tỷ</span>
+                    <button class="bg-slate-900 text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors cursor-pointer">Xem chi tiết</button>
+                </div>
+            </div>
 
-    <div>
-        <h3>Nhà phố hiện đại</h3>
-        <iframe src="https://assets.pinterest.com/ext/embed.html?id=601089881566271614" height="332" width="345" frameborder="0" scrolling="no"></iframe>
-    </div>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+                <div>
+                    <div class="bg-slate-100 flex justify-center items-center overflow-hidden h-[450px]">
+                        <iframe src="https://assets.pinterest.com/ext/embed.html?id=1150880879765984011" class="w-full h-full border-0" scrolling="no"></iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block bg-emerald-50 text-emerald-600 text-xs font-semibold px-2.5 py-1 rounded-full mb-3">Biệt thự</span>
+                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Biệt thự sân vườn</h3>
+                        <p class="text-sm text-slate-400 mt-1 flex items-center">
+                            📍 Khu đô thị Phú Mỹ Hưng, Quận 7
+                        </p>
+                        <div class="flex items-center gap-4 mt-4 text-slate-500 text-sm border-t border-b border-slate-100 py-3">
+                            <span>🛌 4 PN</span>
+                            <span>🛁 4 WC</span>
+                            <span>📐 250 m²</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 flex items-center justify-between mt-auto">
+                    <span class="text-2xl font-extrabold text-blue-600">18.5 Tỷ</span>
+                    <button class="bg-slate-900 text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors cursor-pointer">Xem chi tiết</button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+                <div>
+                    <div class="bg-slate-100 flex justify-center items-center overflow-hidden h-[450px]">
+                        <iframe src="https://assets.pinterest.com/ext/embed.html?id=601089881566271614" class="w-full h-full border-0" scrolling="no"></iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block bg-amber-50 text-amber-600 text-xs font-semibold px-2.5 py-1 rounded-full mb-3">Nhà phố</span>
+                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Nhà phố hiện đại</h3>
+                        <p class="text-sm text-slate-400 mt-1 flex items-center">
+                            📍 Thảo Điền, TP. Thủ Đức
+                        </p>
+                        <div class="flex items-center gap-4 mt-4 text-slate-500 text-sm border-t border-b border-slate-100 py-3">
+                            <span>🛌 3 PN</span>
+                            <span>🛁 3 WC</span>
+                            <span>📐 120 m²</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 flex items-center justify-between mt-auto">
+                    <span class="text-2xl font-extrabold text-blue-600">9.8 Tỷ</span>
+                    <button class="bg-slate-900 text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors cursor-pointer">Xem chi tiết</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm border-t border-slate-800 mt-12">
+        <p>© 2026 Sàn Giao Dịch Bất Động Sản. Thiết kế bởi AI.</p>
+    </footer>
+
 </body>
 </html>
