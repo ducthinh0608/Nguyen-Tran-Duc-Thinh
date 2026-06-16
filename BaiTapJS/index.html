@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Photo Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/gallery.js" defer></script>
+</head>
+<body>
+
+    <div id="image">
+        Hover over an image below to display here.
+    </div>
+
+    <div class="preview-container">
+        <img class="preview" 
+             src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=400" 
+             alt="Fresh Red Roses" 
+             onmouseover="upDate(this)" 
+             onmouseout="unDo()" 
+             onfocus="upDate(this)" 
+             onblur="unDo()" 
+             tabindex="1">
+
+        <img class="preview" 
+             src="https://images.unsplash.com/photo-1587334206502-7b76e5019599?w=400" 
+             alt="Bright Sunflowers" 
+             onmouseover="upDate(this)" 
+             onmouseout="unDo()" 
+             onfocus="upDate(this)" 
+             onblur="unDo()" 
+             tabindex="2">
+
+        <img class="preview" 
+             src="https://images.unsplash.com/photo-1508747703725-719777637510?w=400" 
+             alt="Vibrant Lavender Fields" 
+             onmouseover="upDate(this)" 
+             onmouseout="unDo()" 
+             onfocus="upDate(this)" 
+             onblur="unDo()" 
+             tabindex="3">
+    </div>
+
+</body>
+</html>
