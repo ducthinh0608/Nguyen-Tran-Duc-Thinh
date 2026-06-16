@@ -3,44 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Photo Gallery</title>
+    <title>My Accessible Photo Gallery</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/gallery.js" defer></script>
 </head>
 <body>
 
-    <div id="image">
-        Hover over an image below to display here.
-    </div>
+    <!-- Khung tiêu đề chuẩn ngữ nghĩa (Semantic HTML) -->
+    <header>
+        <h1>Blossom Boutique - Interactive Gallery</h1>
+        <p>Use your mouse or press 'Tab' on your keyboard to navigate the gallery.</p>
+    </header>
 
-    <div class="preview-container">
-        <img class="preview" 
-             src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=400" 
-             alt="Fresh Red Roses" 
-             onmouseover="upDate(this)" 
-             onmouseout="unDo()" 
-             onfocus="upDate(this)" 
-             onblur="unDo()" 
-             tabindex="1">
+    <main>
+        <!-- Khung hiển thị ảnh lớn khi tương tác -->
+        <div id="image">
+            Hover over an image below to display here.
+        </div>
 
-        <img class="preview" 
-             src="https://images.unsplash.com/photo-1587334206502-7b76e5019599?w=400" 
-             alt="Bright Sunflowers" 
-             onmouseover="upDate(this)" 
-             onmouseout="unDo()" 
-             onfocus="upDate(this)" 
-             onblur="unDo()" 
-             tabindex="2">
+        <!-- Hàng chứa 6 bức ảnh nhỏ (Đã xóa tabindex để JS tự thêm tự động) -->
+        <div class="preview-container">
+            <img class="preview" src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=400" alt="Fresh Red Roses" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
+            <img class="preview" src="https://images.unsplash.com/photo-1587334206502-7b76e5019599?w=400" alt="Bright Sunflowers" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
+            <img class="preview" src="https://images.unsplash.com/photo-1508747703725-719777637510?w=400" alt="Vibrant Lavender Fields" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
+            <img class="preview" src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=400" alt="Elegant White Lilies" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
+            <img class="preview" src="https://images.unsplash.com/photo-1596436889106-be35e843f974?w=400" alt="Beautiful Pink Tulips" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="onfocus" onblur="unDo()">
+            <img class="preview" src="https://images.unsplash.com/photo-1550950158-d0d960dff51b?w=400" alt="Exotic Pink Orchids" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
+        </div>
+    </main>
 
-        <img class="preview" 
-             src="https://images.unsplash.com/photo-1508747703725-719777637510?w=400" 
-             alt="Vibrant Lavender Fields" 
-             onmouseover="upDate(this)" 
-             onmouseout="unDo()" 
-             onfocus="upDate(this)" 
-             onblur="unDo()" 
-             tabindex="3">
-    </div>
+    <footer>
+        <p>&copy; 2026 Final Project - Accessible Web Design Course.</p>
+    </footer>
 
 </body>
 </html>
