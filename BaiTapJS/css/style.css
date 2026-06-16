@@ -6,8 +6,18 @@ body {
     padding: 20px;
 }
 
+header h1 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #666;
+    margin-top: 0;
+}
+
 #image {
-    width: 80%;
+    width: 85%;
     height: 450px;
     border: 5px solid #222;
     margin: 20px auto;
@@ -16,7 +26,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     color: #ffffff;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,13 +39,15 @@ body {
 .preview-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
     margin-top: 30px;
+    padding: 10px;
 }
 
 .preview {
-    width: 160px;
-    height: 110px;
+    width: 150px;
+    height: 100px;
     object-fit: cover;
     border: 3px solid #333;
     cursor: pointer;
@@ -47,4 +59,10 @@ body {
     transform: scale(1.08);
     border-color: #ffeb3b;
     outline: none;
+}
+
+footer {
+    margin-top: 40px;
+    color: #888;
+    font-size: 0.9rem;
 }
