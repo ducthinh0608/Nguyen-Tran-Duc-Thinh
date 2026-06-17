@@ -4,7 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blossom Boutique - Interactive Gallery</title>
-    <link rel="stylesheet" href="style.css?v=2.0">
+    
+    <style>
+        /* CHẾ ĐỘ XEM DI ĐỘNG (Mặc định bên ngoài) */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        .gallery-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* CHẾ ĐỘ MÁY TÍNH BẢNG (Từ 772px trở lên) */
+        @media (min-width: 772px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-container img {
+                border-radius: 50%;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+            }
+            .gallery-item:last-child {
+                grid-column: span 2;
+            }
+        }
+
+        /* CHẾ ĐỘ MÀN HÌNH LỚN (Từ 992px trở lên) */
+        @media (min-width: 992px) {
+            .gallery-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .gallery-item:nth-child(3n) {
+                grid-column: span 2;
+            }
+            .gallery-container img {
+                border-radius: 0;
+                aspect-ratio: auto;
+            }
+        }
+
+        /* GIẢM CHUYỂN ĐỘNG */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto !important; }
+            *, *::before, *::after {
+                animation-delay: -1ms !important;
+                animation-duration: 1ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0s !important;
+            }
+        }
+
+        /* CHẾ ĐỘ TỐI (DARK MODE) */
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #121212; }
+            .gallery-item p { color: #FFD700; }
+            .gallery-container img { border: 3px solid #000000; }
+        }
+    </style>
 </head>
 <body>
 
@@ -16,26 +77,40 @@
 
     <main>
         <div class="gallery-container">
-            
             <div class="gallery-item" tabindex="0">
                 <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=500" alt="Pink Flowers Heart">
                 <p>Beautiful pink roses arranged in a romantic heart shape.</p>
             </div>
-
             <div class="gallery-item" tabindex="0">
                 <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?w=500" alt="Red Onions">
                 <p>Freshly harvested red onions bundled together at the market.</p>
             </div>
-
             <div class="gallery-item" tabindex="0">
                 <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=500" alt="Pink Tulips">
                 <p>A fresh bouquet of pink tulips placed in a clear glass vase.</p>
             </div>
-
             <div class="gallery-item" tabindex="0">
                 <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=500" alt="Bright Sunflowers">
                 <p>Vibrant sunflowers blooming beautifully under the bright sunlight.</p>
             </div>
-
             <div class="gallery-item" tabindex="0">
-                <img src="
+                <img src="https://images.unsplash.com/photo-1533616688419-b7a585564566?w=500" alt="White Roses">
+                <p>Elegant white roses offering a classic and timeless aesthetic.</p>
+            </div>
+            <div class="gallery-item" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=500" alt="Garden Tools">
+                <p>Small gardening tools resting next to fresh green sprouts.</p>
+            </div>
+            <div class="gallery-item" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=500" alt="Purple Lavender">
+                <p>A vast field of purple lavender stretching out to the horizon.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Blossom Boutique. Final Project for Responsive Web Design.</p>
+    </footer>
+
+</body>
+</html>
