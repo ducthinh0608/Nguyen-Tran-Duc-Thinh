@@ -1,115 +1,100 @@
-/* ==========================================================================
-   YÊU CẦU 1: CHẾ ĐỘ XEM DI ĐỘNG (Ưu tiên thiết bị di động - Mobile First)
-   "Không có truy vấn phương tiện cho chế độ xem di động" -> Viết trực tiếp bên ngoài.
-   ========================================================================== */
 
-/* Sử dụng lưới một cột */
-.gallery-container {
-    display: grid;
-    grid-template-columns: 1fr; /* Lưới một cột */
-    gap: 10px;                  /* Khoảng cách 10px giữa các hàng và cột */
+/* ==========================================================================
+   1. MOBILE VIEW (Mặc định)
+   ========================================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #333333;
 }
 
-/* Đảm bảo hình ảnh co giãn tốt và không bị méo */
+header, footer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.gallery-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    text-align: center;
+}
+
 .gallery-container img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-
 /* ==========================================================================
-   YÊU CẦU 2: CHẾ ĐỘ XEM MÁY TÍNH BẢNG (Tablet)
-   "Kích hoạt ở 772px, không lặp lại các quy tắc không cần thiết"
+   2. TABLET VIEW (772px)
    ========================================================================== */
 @media (min-width: 772px) {
     .gallery-container {
-        /* a. Sử dụng lưới hai cột */
         grid-template-columns: repeat(2, 1fr);
     }
-
     .gallery-container img {
-        /* b. Đặt bán kính đường viền trên các hình để tạo hình tròn */
         border-radius: 50%;
-        aspect-ratio: 1 / 1; /* Giúp hình tròn đều không bị móp */
+        aspect-ratio: 1 / 1;
         object-fit: cover;
     }
-
-    /* c. Đặt con số cuối cùng để chiếm cả hai cột */
-    /* Giả sử bạn dùng thẻ chứa là .gallery-item hoặc trực tiếp thẻ img */
     .gallery-item:last-child {
         grid-column: span 2;
     }
 }
 
-
 /* ==========================================================================
-   YÊU CẦU 3: CHẾ ĐỘ XEM MÀN HÌNH LỚN (Desktop)
-   "Kích hoạt ở 992px, không lặp lại các quy tắc không cần thiết"
+   3. DESKTOP VIEW (992px)
    ========================================================================== */
 @media (min-width: 992px) {
     .gallery-container {
-        /* Chuyển thành lưới 3 cột để phù hợp quy tắc chiếm 2 cột phía dưới */
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
     }
-
-    /* a. Đặt mỗi con số thứ ba để chiếm cả hai cột */
     .gallery-item:nth-child(3n) {
         grid-column: span 2;
     }
-
-    /* b. Xóa bán kính đường viền khỏi tất cả các hình */
-    /* i. Đảm bảo không sử dụng chiều rộng tối đa (max-width) !! */
     .gallery-container img {
-        border-radius: 0;      /* Xóa bo tròn về mặc định vuông */
-        aspect-ratio: auto;    /* Xóa tỷ lệ vuông */
-        /* Tuyệt đối KHÔNG viết max-width ở đây theo đúng yêu cầu bài */
+        border-radius: 0;
+        aspect-ratio: auto;
     }
 }
 
-
 /* ==========================================================================
-   YÊU CẦU 4: TRUY VẤN PHƯƠNG TIỆN GIẢM CHUYỂN ĐỘNG (Prefers-reduced-motion)
+   4. REDUCED MOTION
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
     html {
-        /* a. Xóa hành vi cuộn (vô hiệu hóa scroll-smooth) */
         scroll-behavior: auto !important;
     }
-    
-    /* Vô hiệu hóa thêm các chuyển động khác để chắc chắn */
     *, *::before, *::after {
-        animation-delay: -1ms !important;
-        animation-duration: 1ms !important;
-        animation-iteration-count: 1 !important;
-        background-attachment: initial !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0s !important;
-        transition-delay: 0s !important;
+        animation: none !important;
+        transition: none !important;
     }
 }
 
-
 /* ==========================================================================
-   YÊU CẦU 5: TRUY VẤN PHƯƠNG TIỆN CHO CHẾ ĐỘ MÀU TỐI (Dark Mode)
-   "Giả sử rằng bảng màu mặc định của bạn là sáng"
+   5. DARK MODE
    ========================================================================== */
 @media (prefers-color-scheme: dark) {
-    /* a. Thay đổi màu nền của các hình thành màu tối 
-       (Đề bài ghi "màu nền của các hình" nên ta áp dụng lên phần tử chứa ảnh/nền ảnh) */
+    body {
+        background-color: #1a1a1a;
+    }
     .gallery-item {
-        background-color: #121212; /* Màu tối */
+        background-color: #121212;
     }
-
-    /* b. Thay đổi màu phông chữ của các hình thành màu nhạt hơn (có thể là màu vàng) */
-    .gallery-item p, 
-    .gallery-item span, 
-    .gallery-text {
-        color: #FFD700; /* Màu vàng (Gold) hoặc màu nhạt */
+    .gallery-item p, header h1, header p, footer p {
+        color: #FFD700;
     }
-
-    /* c. Thay đổi màu viền của các hình thành màu đen */
     .gallery-container img {
-        border: 3px solid #000000; /* Viền màu đen */
+        border: 3px solid #000000;
     }
 }
