@@ -1,114 +1,31 @@
-html{
-scroll-behavior: smooth;
+/* ==========================================================================
+   TRUY VẤN #1: CHẾ ĐỘ XEM MÁY TÍNH BẢNG (TABLET VIEW) - KÍCH HOẠT Ở 772PX
+   ========================================================================== */
+@media (min-width: 772px) {
+    /* Đề bài: Thay đổi các divs bằng 45% chiều rộng của chế độ xem */
+    /* Để các div nằm ngang được 2 cột, chúng ta thêm display: inline-block hoặc dùng flexbox */
+    .gallery-item, div.responsive-box, .box { 
+        width: 45%;
+        display: inline-block;
+        vertical-align: top;
+        margin: 1%; /* Khoảng cách nhỏ giữa các ô để không bị đẩy xuống hàng */
+    }
+
+    /* Đề bài: Hình ảnh không quá 30% chiều cao của chế độ xem (viewport height) */
+    .gallery-item img, div.responsive-box img, .box img {
+        max-height: 30vh; 
+        width: 100%;
+        object-fit: cover;
+    }
 }
 
-body{
-margin: 0;
-padding: 20px;
-font-family: Arial, sans-serif;
-background: #ffffff;
-color: #333333;
-}
-
-header{
-text-align: center;
-margin-bottom: 20px;
-}
-
-h1{
-margin-bottom: 10px;
-}
-
-.gallery{
-display: grid;
-grid-template-columns: 1fr;
-gap: 10px;
-}
-
-figure{
-margin: 0;
-padding: 10px;
-border: 2px solid #666;
-background: #f5f5f5;
-text-align: center;
-}
-
-img{
-width: 100%;
-display: block;
-}
-
-.gallery-item{
-transition: all 0.3s ease;
-}
-
-.gallery-item:focus{
-outline: none;
-}
-
-/* Tablet */
-@media screen and (min-width:772px){
-
-```
-.gallery{
-    grid-template-columns: 1fr 1fr;
-}
-
-img{
-    border-radius: 50%;
-}
-
-.gallery figure:last-child{
-    grid-column: 1 / span 2;
-}
-```
-
-}
-
-/* Large Screen */
-@media screen and (min-width:992px){
-
-```
-img{
-    border-radius: 0;
-}
-
-.gallery figure:nth-child(3n){
-    grid-column: 1 / span 2;
-}
-```
-
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce){
-
-```
-html{
-    scroll-behavior: auto;
-}
-
-.gallery-item{
-    transition: none;
-}
-```
-
-}
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark){
-
-```
-body{
-    background: #111;
-    color: #ffffff;
-}
-
-figure{
-    background: #222;
-    color: #ffff66;
-    border: 2px solid #000;
-}
-```
-
+/* ==========================================================================
+   TRUY VẤN #2: CHẾ ĐỘ XEM MÀN HÌNH LỚN (DESKTOP VIEW) - KÍCH HOẠT Ở 998PX
+   ========================================================================== */
+@media (min-width: 998px) {
+    /* Đề bài: Thay đổi các divs bằng 30% chiều rộng của chế độ xem. Không cần thay đổi nào khác. */
+    /* Chiều rộng 30% giúp tự động xếp vừa vặn thành 3 cột hàng ngang */
+    .gallery-item, div.responsive-box, .box {
+        width: 30%;
+    }
 }
