@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Accessible Photo Gallery</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/gallery.js" defer></script>
+    <title>Blossom Boutique - Interactive Gallery</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <h1>Blossom Boutique - Interactive Gallery</h1>
         <p>Use your mouse or press 'Tab' on your keyboard to navigate the gallery.</p>
+        <p>Hover over an image below to display here.</p>
     </header>
 
     <main>
-        <!-- Khung hiển thị ảnh lớn khi tương tác -->
-        <div id="image">
-            Hover over an image below to display here.
-        </div>
+        <div class="gallery-container">
+            
+            <div class="gallery-item" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=500" alt="Pink Flowers Heart">
+                <p>Beautiful pink roses arranged in a romantic heart shape.</p>
+            </div>
 
-        <!-- Hàng chứa 6 bức ảnh hoa nhỏ đẹp mắt -->
-        <div class="preview-container">
-            <img class="preview" src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=400" alt="Fresh Red Roses" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
-            <img class="preview" src="https://images.unsplash.com/photo-1587334206502-7b76e5019599?w=400" alt="Bright Sunflowers" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
-            <img class="preview" src="https://images.unsplash.com/photo-1508747703725-719777637510?w=400" alt="Vibrant Lavender Fields" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
-            <img class="preview" src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=400" alt="Elegant White Lilies" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
-            <img class="preview" src="https://images.unsplash.com/photo-1596436889106-be35e843f974?w=400" alt="Beautiful Pink Tulips" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
-            <img class="preview" src="https://images.unsplash.com/photo-1550950158-d0d960dff51b?w=400" alt="Exotic Pink Orchids" onmouseover="upDate(this)" onmouseout="unDo()" onfocus="upDate(this)" onblur="unDo()">
-        </div>
-    </main>
+            <div class="gallery-item" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?w=500" alt="Red Onions">
+                <p>Freshly harvested red onions bundled together at the market.</p>
+            </div>
 
-    <footer>
-        <p>&copy; 2026 Final Project - Accessible Web Design Course.</p>
-    </footer>
+            <div class="gallery-item" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=500" alt="Pink Tulips">
+                <p>A fresh bouquet of pink tulips placed in a clear glass vase.</p>
+            </div>
 
-</body>
-</html>
+            <div class="gallery-item" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=500" alt="Bright Sunflowers">
+                <p>Vibrant sunflowers blooming beautifully under the bright sunlight.</p>
+            </div>
+
+            <div class="gallery-item" tabindex="0">
+                <img src="
