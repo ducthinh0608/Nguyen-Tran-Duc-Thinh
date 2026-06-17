@@ -1,16 +1,16 @@
 /* ==========================================================================
-   1. CHẾ ĐỘ XEM DI ĐỘNG (Mobile First - Ưu tiên thiết bị di động)
-   Không đặt trong truy vấn phương tiện (media query).
+   YÊU CẦU 1: CHẾ ĐỘ XEM DI ĐỘNG (Ưu tiên thiết bị di động - Mobile First)
+   "Không có truy vấn phương tiện cho chế độ xem di động" -> Viết trực tiếp bên ngoài.
    ========================================================================== */
 
-/* Sử dụng lưới một cột cho danh sách hình ảnh/nội dung gallery */
+/* Sử dụng lưới một cột */
 .gallery-container {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px; /* Khoảng cách 10px giữa các hàng và cột */
+    grid-template-columns: 1fr; /* Lưới một cột */
+    gap: 10px;                  /* Khoảng cách 10px giữa các hàng và cột */
 }
 
-/* Đảm bảo hình ảnh co giãn tốt */
+/* Đảm bảo hình ảnh co giãn tốt và không bị méo */
 .gallery-container img {
     width: 100%;
     height: auto;
@@ -19,24 +19,24 @@
 
 
 /* ==========================================================================
-   2. CHẾ ĐỘ XEM MÁY TÍNH BẢNG (Tablet)
-   Kích hoạt từ 772px, không lặp lại các quy tắc không cần thiết.
+   YÊU CẦU 2: CHẾ ĐỘ XEM MÁY TÍNH BẢNG (Tablet)
+   "Kích hoạt ở 772px, không lặp lại các quy tắc không cần thiết"
    ========================================================================== */
 @media (min-width: 772px) {
     .gallery-container {
-        /* Sử dụng lưới hai cột */
+        /* a. Sử dụng lưới hai cột */
         grid-template-columns: repeat(2, 1fr);
     }
 
     .gallery-container img {
-        /* Đặt bán kính đường viền trên các hình để tạo hình tròn */
-        border-radius: 50%; 
-        /* Mẹo bổ sung: Để hình tròn đẹp, bạn nên gán tỉ lệ vuông aspect-ratio: 1/1 và object-fit: cover */
-        aspect-ratio: 1/1;
+        /* b. Đặt bán kính đường viền trên các hình để tạo hình tròn */
+        border-radius: 50%;
+        aspect-ratio: 1 / 1; /* Giúp hình tròn đều không bị móp */
         object-fit: cover;
     }
 
-    /* Đặt con số cuối cùng để chiếm cả hai cột (Giả định item cuối có class .last-item) */
+    /* c. Đặt con số cuối cùng để chiếm cả hai cột */
+    /* Giả sử bạn dùng thẻ chứa là .gallery-item hoặc trực tiếp thẻ img */
     .gallery-item:last-child {
         grid-column: span 2;
     }
@@ -44,58 +44,72 @@
 
 
 /* ==========================================================================
-   3. CHẾ ĐỘ XEM MÀN HÌNH LỚN (Desktop)
-   Kích hoạt từ 992px, không lặp lại các quy tắc không cần thiết.
+   YÊU CẦU 3: CHẾ ĐỘ XEM MÀN HÌNH LỚN (Desktop)
+   "Kích hoạt ở 992px, không lặp lại các quy tắc không cần thiết"
    ========================================================================== */
 @media (min-width: 992px) {
-    /* Đặt mỗi con số thứ ba để chiếm cả hai cột */
-    /* Chọn các phần tử thứ 3, 6, 9... */
+    .gallery-container {
+        /* Chuyển thành lưới 3 cột để phù hợp quy tắc chiếm 2 cột phía dưới */
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    /* a. Đặt mỗi con số thứ ba để chiếm cả hai cột */
     .gallery-item:nth-child(3n) {
         grid-column: span 2;
     }
 
-    /* Xóa bán kính đường viền khỏi tất cả các hình */
+    /* b. Xóa bán kính đường viền khỏi tất cả các hình */
+    /* i. Đảm bảo không sử dụng chiều rộng tối đa (max-width) !! */
     .gallery-container img {
-        border-radius: 0;
-        aspect-ratio: auto; /* Trả về mặc định nếu cần */
+        border-radius: 0;      /* Xóa bo tròn về mặc định vuông */
+        aspect-ratio: auto;    /* Xóa tỷ lệ vuông */
+        /* Tuyệt đối KHÔNG viết max-width ở đây theo đúng yêu cầu bài */
     }
-
-    /* Đảm bảo không sử dụng chiều rộng tối đa (max-width) !! */
-    /* (Đoạn này không thêm các thuộc tính max-width vào các div/img để tuân thủ yêu cầu đề bài) */
 }
 
 
 /* ==========================================================================
-   4. TRUY VẤN PHƯƠNG TIỆN TRUYỀN THÔNG GIẢM CHUYỂN ĐỘNG (Prefers-Reduced-Motion)
+   YÊU CẦU 4: TRUY VẤN PHƯƠNG TIỆN GIẢM CHUYỂN ĐỘNG (Prefers-reduced-motion)
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
-    * {
-        /* Xóa hành vi cuộn mượt mà (Xóa hành vi cuộn) */
+    html {
+        /* a. Xóa hành vi cuộn (vô hiệu hóa scroll-smooth) */
         scroll-behavior: auto !important;
-        /* Tắt hiệu ứng chuyển động khác nếu có */
-        animation: none !important;
-        transition: none !important;
+    }
+    
+    /* Vô hiệu hóa thêm các chuyển động khác để chắc chắn */
+    *, *::before, *::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
     }
 }
 
 
 /* ==========================================================================
-   5. TRUY VẤN PHƯƠNG TIỆN CHO CHẾ ĐỘ MÀU TỐI (Dark Mode)
-   Giả sử mặc định của bạn là sáng.
+   YÊU CẦU 5: TRUY VẤN PHƯƠNG TIỆN CHO CHẾ ĐỘ MÀU TỐI (Dark Mode)
+   "Giả sử rằng bảng màu mặc định của bạn là sáng"
    ========================================================================== */
 @media (prefers-color-scheme: dark) {
-    body {
-        /* Thay đổi màu nền của các hình thành màu tối (hoặc nền body/container chứa hình) */
-        background-color: #121212; 
+    /* a. Thay đổi màu nền của các hình thành màu tối 
+       (Đề bài ghi "màu nền của các hình" nên ta áp dụng lên phần tử chứa ảnh/nền ảnh) */
+    .gallery-item {
+        background-color: #121212; /* Màu tối */
     }
 
-    /* Thay đổi màu phông chữ của các hình thành màu nhạt hơn (có thể là màu vàng) */
-    .gallery-item, p, h1, h2, h3 {
-        color: #FFD700; /* Màu vàng (Gold) hoặc màu nhạt mong muốn */
+    /* b. Thay đổi màu phông chữ của các hình thành màu nhạt hơn (có thể là màu vàng) */
+    .gallery-item p, 
+    .gallery-item span, 
+    .gallery-text {
+        color: #FFD700; /* Màu vàng (Gold) hoặc màu nhạt */
     }
 
-    /* Thay đổi màu viền của các hình thành màu đen */
+    /* c. Thay đổi màu viền của các hình thành màu đen */
     .gallery-container img {
-        border: 2px solid #000000;
+        border: 3px solid #000000; /* Viền màu đen */
     }
 }
