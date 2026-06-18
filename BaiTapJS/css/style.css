@@ -1,31 +1,134 @@
-/* ==========================================================================
-   TRUY VẤN #1: CHẾ ĐỘ XEM MÁY TÍNH BẢNG (TABLET VIEW) - KÍCH HOẠT Ở 772PX
-   ========================================================================== */
-@media (min-width: 772px) {
-    /* Đề bài: Thay đổi các divs bằng 45% chiều rộng của chế độ xem */
-    /* Để các div nằm ngang được 2 cột, chúng ta thêm display: inline-block hoặc dùng flexbox */
-    .gallery-item, div.responsive-box, .box { 
-        width: 45%;
-        display: inline-block;
-        vertical-align: top;
-        margin: 1%; /* Khoảng cách nhỏ giữa các ô để không bị đẩy xuống hàng */
-    }
-
-    /* Đề bài: Hình ảnh không quá 30% chiều cao của chế độ xem (viewport height) */
-    .gallery-item img, div.responsive-box img, .box img {
-        max-height: 30vh; 
-        width: 100%;
-        object-fit: cover;
-    }
+/* Reset căn lề cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* ==========================================================================
-   TRUY VẤN #2: CHẾ ĐỘ XEM MÀN HÌNH LỚN (DESKTOP VIEW) - KÍCH HOẠT Ở 998PX
-   ========================================================================== */
-@media (min-width: 998px) {
-    /* Đề bài: Thay đổi các divs bằng 30% chiều rộng của chế độ xem. Không cần thay đổi nào khác. */
-    /* Chiều rộng 30% giúp tự động xếp vừa vặn thành 3 cột hàng ngang */
-    .gallery-item, div.responsive-box, .box {
-        width: 30%;
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- GIAO DIỆN MÁY TÍNH (DESKTOP) --- */
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+}
+
+.menu-toggle {
+    display: none; /* Ẩn menu 3 gạch trên máy tính */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    flex: 1;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-placeholder {
+    width: 250px;
+    height: 250px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #666;
+}
+
+.hero-content {
+    flex: 1;
+    padding-left: 40px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+}
+
+
+/* --- GIAO DIỆN DI ĐỘNG (MOBILE RESPONSIVE) --- */
+@media (max-width: 768px) {
+    .nav {
+        display: none; /* Ẩn thanh menu ngang */
+    }
+
+    .menu-toggle {
+        display: block; /* Hiện menu 3 gạch */
+    }
+
+    .hero {
+        flex-direction: column; /* Chuyển thành 1 cột dọc */
+        text-align: center;
+        padding: 40px 5%;
+    }
+
+    .hero-content {
+        padding-left: 0;
+        margin-top: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
     }
 }
