@@ -3,153 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyễn Trần Đức Thịnh - Chuyên Gia Phát Triển Web</title>
+    <title>Nguyễn Trần Đức Thịnh - Portfolio Dự Án Nâng Cao</title>
+    <!-- Nhúng Framework Bootstrap 5 từ CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Liên kết đến tệp CSS tùy chỉnh riêng biệt -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <!-- THANH ĐIỀU HƯỚNG (NAVBAR) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
         <div class="container">
-            <a class="navbar-brand fw-bold text-uppercase tracking-wider" href="#">
-                <span class="text-primary-custom">Đức Thịnh</span> Tech
-            </a>
+            <a class="navbar-brand fw-bold" href="#">DUC THINH PORTFOLIO</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto fw-medium">
-                    <li class="nav-item"><a class="nav-link active px-3" href="#trang-chu">Trang Chủ</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#dich-vu">Dịch Vụ</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#du-an">Dự Án</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#ky-nang">Kỹ Năng</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#lien-he">Liên Hệ</a></li>
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Trang Chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Giới Thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Dịch Vụ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Dự Án</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Liên Hệ</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header id="trang-chu" class="hero-section bg-white py-5 border-bottom">
-        <div class="container px-5 my-5">
-            <div class="row gx-5 align-items-center">
-                <div class="col-lg-6">
-                    <div class="my-5 text-center text-lg-start">
-                        <div class="badge bg-dark text-white px-3 py-2 rounded-pill mb-3 text-uppercase fw-bold tracking-wider">Sẵn Sàng Cho Dự Án Mới</div>
-                        <h1 class="display-4 fw-bolder text-dark mb-3">Xin chào, mình là <br><span class="text-gradient">Nguyễn Trần Đức Thịnh</span></h1>
-                        <p class="lead text-muted mb-4">Một kỹ sư lập trình Front-End đam mê tạo ra các trải nghiệm kỹ thuật số mượt mà. Dự án danh mục đầu tư này được tối ưu hóa toàn diện bằng cách sử dụng cấu trúc lưới (Grid System) và các thành phần giao diện nâng cao từ Framework Bootstrap 5.</p>
-                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-lg-start">
-                            <a class="btn btn-primary-custom btn-lg px-4 me-sm-3 shadow" href="#du-an">Xem Dự Án</a>
-                            <a class="btn btn-outline-dark btn-lg px-4" href="#lien-he">Liên Hệ Ngay</a>
-                        </div>
+    <!-- TÍNH NĂNG BỔ SUNG 1: BANNER CHÀO MỪNG (HERO SECTION VỚI GRADIENT NỀN) -->
+    <header id="home" class="hero-area text-white d-flex align-items-center">
+        <div class="container text-center text-lg-start py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill fw-bold">FRONT-END DEVELOPER</span>
+                    <h1 class="display-3 fw-bolder mb-3">Nguyễn Trần Đức Thịnh</h1>
+                    <p class="lead mb-4 opacity-90">Chuyên gia xây dựng giao diện web phản hồi (Responsive), tối ưu hóa trải nghiệm người dùng và tuân thủ nghiêm ngặt các tiêu chuẩn cấu trúc mã nguồn sạch W3C.</p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#projects" class="btn btn-light btn-lg px-4 shadow">Xem Sản Phẩm</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg px-4">Kết Nối Ngay</a>
                     </div>
                 </div>
-                <div class="col-lg-6 d-none d-lg-block text-center">
-                    <div class="avatar-box mx-auto shadow-lg d-flex align-items-center justify-content-center text-white">
-                        <div class="text-center">
-                            <span class="fs-1 d-block mb-2">👨‍💻</span>
-                            <span class="fw-bold text-uppercase tracking-wide">Đức Thịnh Portfolio</span>
-                        </div>
-                    </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <!-- TÍNH NĂNG BỔ SUNG 2: KHUNG ĐẠI DIỆN HÌNH HỌC BIẾN ĐỔI (MORPHING AVATAR) -->
+                    <div class="morphing-shape shadow-lg mx-auto"></div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="py-5 bg-light" id="dich-vu">
-        <div class="container px-5 my-5">
-            <div class="text-center mb-5 max-width-600 mx-auto">
-                <h2 class="fw-bolder text-dark section-title position-relative pb-3">Dịch Vụ Cung Cấp</h2>
-                <p class="lead text-muted mt-3">Các giải pháp lập trình và thiết kế tối ưu, giúp nâng tầm sản phẩm số của bạn trên mọi nền tảng thiết bị di động hay máy tính.</p>
-            </div>
-            <div class="row gx-5">
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="card h-100 p-4 border-0 shadow-sm rounded-4 custom-card">
-                        <div class="feature-icon bg-soft-blue">🎨</div>
-                        <h3 class="h4 fw-bolder mb-3">Thiết Kế Giao Diện UI/UX</h3>
-                        <p class="text-muted mb-0">Xây dựng giải pháp phác thảo cấu trúc (Wireframe) trực quan. Thiết kế giao diện hiện đại, đặt trải nghiệm tương tác của người dùng làm trọng tâm cốt lõi.</p>
+    <!-- MỤC GIỚI THIỆU TÓM TẮT -->
+    <section id="about" class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h2 class="fw-bold mb-3 text-dark">Về Bản Thân & Định Hướng</h2>
+                    <p class="text-muted">Tôi tập trung vào việc áp dụng các công nghệ tiên tiến và lưới hệ thống của các Framework hiện đại để giải quyết bài toán hiển thị nhất quán trên mọi kích thước màn hình từ điện thoại, máy tính bảng đến máy tính để bàn lớn.</p>
+                </div>
+                <div class="col-md-6">
+                    <!-- TÍNH NĂNG BỔ SUNG 3: THANH TIẾN TRÌNH KỸ NĂNG TÙY BIẾN -->
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between mb-1 fw-bold text-dark"><span>Bootstrap 5 / Grid System</span><span>95%</span></div>
+                        <div class="progress"><div class="progress-bar bg-dark" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between mb-1 fw-bold text-dark"><span>HTML5 / CSS3 (W3C Standard)</span><span>90%</span></div>
+                        <div class="progress"><div class="progress-bar bg-secondary" style="width: 90%"></div></div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-5 mb-lg-0">
+            </div>
+        </div>
+    </section>
+
+    <!-- MỤC DỊCH VỤ CHUYÊN MÔN -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-dark">Giải Pháp Công Nghệ</h2>
+                <p class="text-muted">Cung cấp dịch vụ lập trình Front-end đáp ứng các tiêu chuẩn khắt khe</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
                     <div class="card h-100 p-4 border-0 shadow-sm rounded-4 custom-card">
-                        <div class="feature-icon bg-soft-green">💻</div>
-                        <h3 class="h4 fw-bolder mb-3">Phát Triển Front-End</h3>
-                        <p class="text-muted mb-0">Chuyển đổi các bản vẽ thiết kế thành mã nguồn HTML5, CSS3 và JavaScript sạch sẽ. Kết hợp hiệu quả với các Framework để tăng tính linh hoạt và bảo mật.</p>
+                        <div class="icon-box mb-3 text-primary fs-2">📱</div>
+                        <h4 class="fw-bold text-dark">Responsive Design</h4>
+                        <p class="text-muted mb-0">Tối ưu hóa bố cục tự co giãn thông minh, tương thích tuyệt đối với mọi thiết bị di động.</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="card h-100 p-4 border-0 shadow-sm rounded-4 custom-card">
-                        <div class="feature-icon bg-soft-orange">🚀</div>
-                        <h3 class="h4 fw-bolder mb-3">Tối Ưu Tốc Độ & SEO</h3>
-                        <p class="text-muted mb-0">Cấu trúc thẻ ngữ nghĩa chuẩn W3C giúp tối ưu hóa công cụ tìm kiếm (SEO). Tăng tốc độ tải trang lên mức tối đa giúp giữ chân người dùng hiệu quả.</p>
+                        <div class="icon-box mb-3 text-success fs-2">🛠️</div>
+                        <h4 class="fw-bold text-dark">W3C Validation</h4>
+                        <p class="text-muted mb-0">Viết mã nguồn chuẩn ngữ nghĩa (Semantic HTML), không chứa lỗi cú pháp cấu trúc.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 p-4 border-0 shadow-sm rounded-4 custom-card">
+                        <div class="icon-box mb-3 text-warning fs-2">⚡</div>
+                        <h4 class="fw-bold text-dark">Tối Ưu Hiệu Năng</h4>
+                        <p class="text-muted mb-0">Tách biệt tệp style, nén tài nguyên giúp trang web đạt tốc độ tải tối đa.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-white" id="ky-nang">
-        <div class="container px-5 my-5">
-            <div class="row gx-5 align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h2 class="fw-bolder mb-4">Nền Tảng Năng Lực Cốt Lõi</h2>
-                    <p class="text-muted mb-4">Dưới đây là các chỉ số đánh giá kỹ thuật chuyên môn được áp dụng trực tiếp vào quá trình vận hành và triển khai các dự án thực tế.</p>
-                    <a class="btn btn-dark btn-md px-4 shadow-sm" href="#lien-he">Yêu Cầu Kiểm Tra Mã Nguồn</a>
-                </div>
-                <div class="col-lg-6">
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between mb-1 fw-medium text-dark"><span>HTML5 / CSS3 (Chuẩn W3C)</span><span>95%</span></div>
-                        <div class="progress" style="height: 8px;"><div class="progress-bar bg-dark" style="width: 95%"></div></div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between mb-1 fw-medium text-dark"><span>Framework Bootstrap 5</span><span>90%</span></div>
-                        <div class="progress" style="height: 8px;"><div class="progress-bar bg-secondary" style="width: 90%"></div></div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between mb-1 fw-medium text-dark"><span>JavaScript (DOM Manipulation)</span><span>85%</span></div>
-                        <div class="progress" style="height: 8px;"><div class="progress-bar bg-dark" style="width: 85%"></div></div>
-                    </div>
-                </div>
+    <!-- MỤC DANH MỤC DỰ ÁN MẪU -->
+    <section id="projects" class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-dark">Dự Án Đã Hoàn Thành</h2>
+                <p class="text-muted">Các sản phẩm thực tế áp dụng Framework kết hợp CSS tùy chỉnh sâu</p>
             </div>
-        </div>
-    </section>
-
-    <section class="py-5 bg-light" id="du-an">
-        <div class="container px-5 my-5">
-            <div class="text-center mb-5 max-width-600 mx-auto">
-                <h2 class="fw-bolder text-dark section-title position-relative pb-3">Dự Án Đã Triển Khai</h2>
-                <p class="lead text-muted mt-3">Những sản phẩm số tiêu biểu minh chứng cho khả năng xử lý giao diện Responsive thực tế.</p>
-            </div>
-            <div class="row gx-5">
-                <div class="col-md-6 col-lg-4 mb-4">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
                     <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 custom-card">
-                        <div class="project-img-holder bg-gradient-blue text-white d-flex align-items-center justify-content-center py-5">
-                            <span class="fs-2">🛒</span>
-                        </div>
+                        <div class="project-banner bg-blue text-white p-5 text-center fs-1">🛍️</div>
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold text-dark">E-Commerce Platform</h5>
-                            <p class="card-text text-muted small">Hệ thống website cửa hàng trực tuyến với cấu trúc bộ lọc sản phẩm đa cấp và module giỏ hàng tự động xử lý bằng JavaScript client-side.</p>
+                            <h5 class="fw-bold text-dark">E-Commerce Web</h5>
+                            <p class="card-text text-muted small">Nền tảng bán hàng trực tuyến với hệ thống lưới chia cột hiển thị sản phẩm linh hoạt.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4">
                     <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 custom-card">
-                        <div class="project-img-holder bg-gradient-dark text-white d-flex align-items-center justify-content-center py-5">
-                            <span class="fs-2">📰</span>
-                        </div>
+                        <div class="project-banner bg-dark text-white p-5 text-center fs-1">✍️</div>
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold text-dark">Tech Blog Magazine</h5>
-                            <p class="card-text text-muted small">Tạp chí điện tử tin tức công nghệ sở hữu bố cục hiển thị văn bản theo tỷ lệ vàng, hỗ trợ tính năng chuyển đổi giao diện Dark Mode linh hoạt.</p>
+                            <h5 class="fw-bold text-dark">Corporate Blog</h5>
+                            <p class="card-text text-muted small">Trang thông tin doanh nghiệp, tối ưu hóa hiển thị bài viết chữ lớn dễ đọc.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 custom-card">
-                        <div class="project-img-holder bg-gradient-purple text-white d-flex align-items-center justify-content-center py-5">
-                            <span class="fs-2">📊</span>
-                        </div>
+                <div class="col-md-6 col-lg-4 mx-auto">
+                    <!-- TÍNH NĂNG BỔ SUNG 4: THẺ DỰ ÁN NỔI BẬT VỚI HIỆU ỨNG GLOW -->
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 custom-card premium-card">
+                        <div class="project-banner bg-purple text-white p-5 text-center fs-1">💎</div>
                         <div class="card-body p-4">
-                            <h5 class="card-title fw-bold text-dark">Task Management App</h5>
-                            <p class="card-text text-muted small">Ứng dụng quản trị và điều phối tiến độ công việc nội bộ dạng bảng Kanban trực quan, tự động co dãn mượt mà trên màn hình di động di động.</p>
+                            <h5 class="fw-bold text-dark">SaaS Dashboard</h5>
+                            <p class="card-text text-muted small">Bảng điều khiển quản trị thông minh, sử dụng bộ màu đặc biệt và bo góc đổ bóng sâu.</p>
                         </div>
                     </div>
                 </div>
@@ -157,19 +147,17 @@
         </div>
     </section>
 
-    <footer id="lien-he" class="py-5 bg-dark text-white">
-        <div class="container px-5 text-center">
-            <h2 class="fw-bold mb-3">Kết Nối Với Mình</h2>
-            <p class="text-muted mb-4 max-width-600 mx-auto">Bạn có ý tưởng dự án hoặc cần trao đổi giải pháp công nghệ? Hãy liên hệ ngay để cùng nhau xây dựng những sản phẩm tuyệt vời.</p>
-            <div class="mb-4">
-                <span class="mx-3 text-light">📧 thinhntd@example.com</span>
-                <span class="mx-3 text-light">📞 +84 123 456 789</span>
-            </div>
+    <!-- CHÂN TRANG (FOOTER) -->
+    <footer id="contact" class="py-5 bg-dark text-white border-top border-secondary">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-3">Thông Tin Liên Hệ</h3>
+            <p class="text-muted mb-4">Email: thinhntd@example.com | Điện thoại: +84 987 654 321</p>
             <hr class="border-secondary my-4">
-            <p class="m-0 text-muted small">Copyright &copy; 2026 | Dự Án Web Trên Framework Bootstrap của Nguyễn Trần Đức Thịnh</p>
+            <p class="m-0 text-muted small">Copyright &copy; 2026 | Nguyễn Trần Đức Thịnh Portfolio. Đã tối ưu chuẩn Framework.</p>
         </div>
     </footer>
 
+    <!-- Nhúng Script của Bootstrap để kích hoạt Menu di động -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
