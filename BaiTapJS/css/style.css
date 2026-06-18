@@ -1,63 +1,180 @@
-/* --- TỆP CSS TÙY CHỈNH NÂNG CAO CHO DỰ ÁN MỚI --- */
+/* --- TỆP CSS NÂNG CẤP TOÀN DIỆN THẨM MỸ CAO CẤP --- */
 
-/* Khởi tạo các biến cấu hình hệ thống màu */
+/* Khởi tạo biến màu và cấu hình nâng cao */
 :root {
-    --primary-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    --premium-glow: 0px 10px 30px rgba(155, 89, 182, 0.3);
-    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --p-color: #0f172a;       /* Màu nền bóng đêm quý phái */
+    --s-color: #3b82f6;       /* Xanh công nghệ */
+    --accent-color: #ec4899;  /* Hồng neon tương phản cực cao */
+    --grad-premium: linear-gradient(135deg, #3b82f6 0%, #ec4899 100%);
+    --glow-effect: 0px 15px 35px rgba(236, 72, 153, 0.35);
+    --smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Định dạng khu vực Banner chào mừng chính */
-.hero-area {
-    background: var(--primary-gradient);
-    min-height: 70vh;
+/* Kích hoạt hiệu ứng cuộn trang mượt mà */
+html {
+    scroll-behavior: smooth;
 }
 
-/* Hiệu ứng chuyển động mượt mà cho toàn bộ thẻ card và nút bấm */
-.btn, .custom-card {
-    transition: var(--transition-smooth);
+body {
+    background-color: #f8fafc;
+    color: #334155;
+    overflow-x: hidden;
 }
 
-/* Cấu trúc các ô card dịch vụ và dự án khi tương tác */
-.custom-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+/* 1. THANH TIẾN TRÌNH CUỘN TRÊN ĐẦU TRANG */
+.progress-container {
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+}
+.progress-bar-scroll {
+    height: 4px;
+    background: var(--grad-premium);
+    width: 0%;
 }
 
-/* TÍNH NĂNG BỔ SUNG 2: Khung hình học biến đổi liên tục (Morphing Shape) */
-.morphing-shape {
-    width: 300px;
-    height: 300px;
-    background: linear-gradient(45deg, #f39c12, #d35400);
-    border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
-    animation: morphAnimation 8s ease-in-out infinite alternate;
+/* 2. MENU ĐIỀU HƯỚNG HIỆU ỨNG KÍNH (GLASSMORPHISM) */
+.glass-navbar {
+    background: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 15px 0;
+}
+.text-accent { color: var(--accent-color); }
+.bg-accent-light { background-color: rgba(236, 72, 153, 0.2); border: 1px solid var(--accent-color); }
+
+/* 3. KHU VỰC HERO ĐỘC QUYỀN */
+.hero-premium {
+    background: var(--p-color);
+    min-height: 85vh;
+    position: relative;
+}
+.text-gradient-premium {
+    background: var(--grad-premium);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btn-gradient {
+    background: var(--grad-premium);
+    color: #fff;
+    border: none;
+}
+.btn-gradient:hover {
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: var(--glow-effect);
 }
 
-@keyframes morphAnimation {
-    0% { border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%; }
-    100% { border-radius: 70% 30% 45% 55% / 65% 60% 40% 35%; }
+/* Khung ảnh động chuyển động tròn */
+.avatar-holder {
+    width: 280px;
+    height: 280px;
+}
+.animated-bg-circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--grad-premium);
+    border-radius: 43% 57% 50% 50% / 40% 40% 60% 60%;
+    animation: waveShape 7s linear infinite alternate;
+}
+.avatar-content {
+    position: absolute;
+    width: 94%;
+    height: 94%;
+    top: 3%;
+    left: 3%;
+    background: var(--p-color);
+    border-radius: 50%;
 }
 
-/* TÍNH NĂNG BỔ SUNG 3: Thanh hiển thị tiến trình (Progress Bar) tùy biến chiều cao */
-.progress {
-    height: 10px;
-    background-color: #e9ecef;
-    border-radius: 20px;
-    overflow: hidden;
+@keyframes waveShape {
+    0% { border-radius: 43% 57% 50% 50% / 40% 40% 60% 60%; }
+    100% { border-radius: 60% 40% 65% 35% / 55% 65% 35% 45%; }
 }
 
-/* TÍNH NĂNG BỔ SUNG 4: Thẻ cao cấp có hiệu ứng phát sáng đặc biệt (Glow Effect) */
-.premium-card:hover {
-    box-shadow: var(--premium-glow) !important;
-    border: 1px solid rgba(155, 89, 182, 0.4) !important;
+/* 4. TIÊU ĐỀ CÓ ĐƯỜNG GẠCH PHÁT SÁNG */
+.title-accent position-relative::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 5px;
+    background: var(--grad-premium);
+    border-radius: 3px;
+}
+.py-6 { padding-top: 5.5rem; padding-bottom: 5.5rem; }
+
+/* 5. NÂNG CẤP CÁC Ô THẺ HIỆU ỨNG TƯƠNG TÁC SÂU */
+.card-premium {
+    transition: var(--smooth);
+}
+.card-premium:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Các lớp nền màu cho banner của khối dự án */
-.project-banner {
-    height: 140px;
+.icon-circle {
+    width: 4rem;
+    height: 4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    font-size: 1.8rem;
+}
+.bg-soft-p { background: rgba(15, 17, 42, 0.1); }
+.bg-soft-s { background: rgba(59, 130, 246, 0.15); }
+.bg-soft-a { background: rgba(236, 72, 153, 0.15); }
+
+/* Khung ảnh của mục dự án */
+.project-overlay {
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 2.5rem;
 }
-.bg-blue { background: linear-gradient(135deg, #2980b9, #3498db); }
-.bg-purple { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+.bg-p-grad { background: linear-gradient(135deg, #1e293b, #0f172a); }
+.bg-s-grad { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+.bg-a-grad { background: linear-gradient(135deg, #db2777, #ec4899); }
+
+.card-glow:hover {
+    box-shadow: var(--glow-effect) !important;
+}
+
+/* 6. THANH ĐÁNH GIÁ CHUYÊN NGHIỆP */
+.progress-premium {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.progress-bar-fill {
+    height: 100%;
+    background: var(--grad-premium);
+}
+
+/* 7. FORM LIÊN HỆ ĐẬM CHẤT CÔNG NGHỆ */
+.bg-secondary-custom {
+    background-color: #1e293b;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.custom-input {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: #fff;
+    padding: 12px;
+    transition: var(--smooth);
+}
+.custom-input:focus {
+    background-color: #0f172a;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2);
+    color: #fff;
+}
