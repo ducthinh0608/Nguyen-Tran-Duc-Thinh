@@ -1,108 +1,63 @@
-/* --- TỆP CSS ĐỊNH DẠNG CHI TIẾT NÂNG CAO --- */
+/* --- TỆP CSS TÙY CHỈNH NÂNG CAO CHO DỰ ÁN MỚI --- */
 
-/* Khởi tạo biến màu sắc đồng bộ */
+/* Khởi tạo các biến cấu hình hệ thống màu */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #1a252f;
-    --accent-gradient: linear-gradient(45deg, #2c3e50, #3498db);
+    --primary-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    --premium-glow: 0px 10px 30px rgba(155, 89, 182, 0.3);
+    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Định dạng tiêu đề chữ dạng Gradient thời thượng */
-.text-gradient {
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* Định dạng khu vực Banner chào mừng chính */
+.hero-area {
+    background: var(--primary-gradient);
+    min-height: 70vh;
 }
 
-.text-primary-custom {
-    color: #3498db;
-}
-
-/* Kiểu dáng cho khung tiêu đề danh mục */
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: var(--accent-gradient);
-    border-radius: 2px;
-}
-
-/* Giới hạn chiều rộng để văn bản cân đối */
-.max-width-600 {
-    max-width: 600px;
-}
-
-/* Thiết lập hiệu ứng chuyển động mượt mà cho toàn bộ thẻ và nút */
+/* Hiệu ứng chuyển động mượt mà cho toàn bộ thẻ card và nút bấm */
 .btn, .custom-card {
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: var(--transition-smooth);
 }
 
-/* Nút bấm tùy chỉnh của dự án */
-.btn-primary-custom {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    border: 1px solid var(--primary-color);
-}
-
-.btn-primary-custom:hover {
-    background-color: var(--secondary-color);
-    color: #ffffff;
-    border-color: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
-
-/* Khung hiển thị ảnh đại diện giả lập hình học */
-.avatar-box {
-    width: 320px;
-    height: 320px;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    background: var(--accent-gradient);
-    animation: morphing 10s infinite ease-in-out;
-}
-
-@keyframes morphing {
-    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
-    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-}
-
-/* Hiệu ứng tương tác nâng cao cho các thẻ dịch vụ và dự án khi rê chuột */
+/* Cấu trúc các ô card dịch vụ và dự án khi tương tác */
 .custom-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
 }
 
-/* Khối nền mềm dịu chứa các Icon */
-.feature-icon {
-    width: 3.5rem;
-    height: 3.5rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    font-size: 1.6rem;
+/* TÍNH NĂNG BỔ SUNG 2: Khung hình học biến đổi liên tục (Morphing Shape) */
+.morphing-shape {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, #f39c12, #d35400);
+    border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+    animation: morphAnimation 8s ease-in-out infinite alternate;
 }
 
-.bg-soft-blue { background-color: rgba(52, 152, 219, 0.15); }
-.bg-soft-green { background-color: rgba(46, 204, 113, 0.15); }
-.bg-soft-orange { background-color: rgba(230, 126, 34, 0.15); }
-
-/* Khối màu nền giả lập hình ảnh của dự án */
-.project-img-holder {
-    height: 160px;
+@keyframes morphAnimation {
+    0% { border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%; }
+    100% { border-radius: 70% 30% 45% 55% / 65% 60% 40% 35%; }
 }
-.bg-gradient-blue { background: linear-gradient(135deg, #3498db, #2980b9); }
-.bg-gradient-dark { background: linear-gradient(135deg, #7f8c8d, #2c3e50); }
-.bg-gradient-purple { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
 
-/* Chỉnh sửa thanh hiển thị tiến trình phần trăm kỹ năng */
+/* TÍNH NĂNG BỔ SUNG 3: Thanh hiển thị tiến trình (Progress Bar) tùy biến chiều cao */
 .progress {
+    height: 10px;
     background-color: #e9ecef;
-    border-radius: 4px;
+    border-radius: 20px;
     overflow: hidden;
 }
+
+/* TÍNH NĂNG BỔ SUNG 4: Thẻ cao cấp có hiệu ứng phát sáng đặc biệt (Glow Effect) */
+.premium-card:hover {
+    box-shadow: var(--premium-glow) !important;
+    border: 1px solid rgba(155, 89, 182, 0.4) !important;
+}
+
+/* Các lớp nền màu cho banner của khối dự án */
+.project-banner {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg-blue { background: linear-gradient(135deg, #2980b9, #3498db); }
+.bg-purple { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
