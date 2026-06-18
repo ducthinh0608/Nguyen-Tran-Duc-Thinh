@@ -3,159 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới thiệu - Nguyễn Trần Đức Thịnh</title>
-    <style>
-        /* CSS Reset & Cơ bản */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f4f7f6;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Header / Hero Section */
-        header {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/gia-lai.jpg') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            font-style: italic;
-            opacity: 0.9;
-        }
-
-        /* Container chung */
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* Các Section */
-        section {
-            background: white;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        /* Bố cục Grid cho Ảnh và Nội dung */
-        .grid-layout {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 30px;
-            align-items: center;
-        }
-
-        @media (max-width: 768px) {
-            .grid-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .image-box {
-            width: 100%;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .image-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .image-box img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Footer kết thúc bằng tiếng Anh */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 50px;
-        }
-
-        footer p {
-            font-size: 1.2rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-    </style>
+    <title>Portfolio Cá Nhân</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Xin chào, mình là Nguyễn Trần Đức Thịnh</h1>
-        <p>Chào mừng bạn đến với trang web cá nhân của mình</p>
+    <header class="header">
+        <div class="logo">MyPortfolio</div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="menu-toggle">&#9776;</div>
     </header>
 
-    <div class="container">
+    <section class="hero">
+        <div class="hero-image">
+            <div class="image-placeholder">Ảnh Đại Diện</div>
+        </div>
+        <div class="hero-content">
+            <h1>Xin chào, mình là [Tên Của Anh]</h1>
+            <p>Chào mừng bạn đến với trang web portfolio cá nhân của mình. Đây là dự án được thiết kế hoàn chỉnh từ đầu.</p>
+            <a href="#" class="btn">Xem Dự Án</a>
+        </div>
+    </section>
 
-        <section>
-            <h2>Quê Hương Của Mình</h2>
-            <div class="grid-layout">
-                <div class="image-box">
-                    <img src="https://images.unsplash.com/photo-1623164473857-4b537c3da620?q=80&w=600" alt="Gia Lai, Viet Nam">
-                </div>
-                <div>
-                    <h3>Gia Lai, Việt Nam</h3>
-                    <p style="margin-top: 10px;">
-                        Mình sinh ra và lớn lên tại <strong>Gia Lai</strong> - một tỉnh miền núi xinh đẹp nằm ở vùng Tây Nguyên thuộc quốc gia <strong>Việt Nam</strong>. 
-                        Nơi đây nổi tiếng với những đồi cà phê bạt ngàn, những cánh rừng hùng vĩ, bầu không khí trong lành và lòng hiếu khách của người dân phố núi.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Thần Tượng Của Mình</h2>
-            <div class="grid-layout">
-                <div class="image-box">
-                    <img src="https://chongluadao.vn/assets/images/team/hieu-pc.jpg" alt="Anh Hiếu PC">
-                </div>
-                <div>
-                    <h3>Anh Hiếu PC (Ngô Minh Hiếu)</h3>
-                    <p style="margin-top: 10px;">
-                        Tại quê hương Gia Lai của mình, có một người truyền cảm hứng rất lớn mà mình luôn ngưỡng mộ, đó chính là anh <strong>Hiếu PC</strong>. 
-                        Anh là một chuyên gia an ninh mạng xuất sắc, hiện đang làm việc tại Trung tâm Giám sát an toàn không gian mạng quốc gia (NCSC) và là người sáng lập dự án Chống Lừa Đảo. 
-                        Hành trình cống hiến và bảo vệ cộng đồng mạng của anh là động lực lớn cho mình học hỏi mỗi ngày.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>Thank you everyone for watching, hope to meet you in my homeland, Vietnam!</p>
+    <footer class="footer">
+        <p>&copy; 2026 Kết nối với mình qua Facebook | LinkedIn</p>
     </footer>
 
 </body>
