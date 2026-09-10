@@ -1,1 +1,39 @@
+touch setup.sh
+nano setup.sh
+-copy and paste code-
+#!/bin/bash
+/usr/sbin/groupadd cool
+/usr/sbin/useradd -m Student
+/usr/sbin/useradd -m zappaf
+/usr/sbin/useradd -m -G cool foxr
+echo "Student" | passwd --stdin Student
+echo "zappaf" | passwd --stdin zappaf
+echo "foxr" | passwd --stdin foxr
+-chay setup.sh
+chmod 0777 setup.sh
+sudo ./setup.sh
+sudo chmod 755 /home/Student /home/zappaf /home/foxr
+cd /home/Student
+wget www.nku.edu/~foxr/linux/student1.tar.gz
+wget www.nku.edu/~foxr/linux/student2.tar.gz
+wget www.nku.edu/~foxr/linux/student3.tar.gz
+tar -xzf student1.tar.gz
+tar -xzf student2.tar.gz
+tar -xzf student3.tar.gz
+rm -f student1.tar.gz
+rm -f student2.tar.gz
+rm -f student3.tar.gz
+chmod 777 TEMP
+cd /home/zappaf
+wget www.nku.edu/~foxr/linux/zappaf.tar.gz
+tar -xzf zappaf.tar.gz
+chgrp cool /home/zappaf/IQ
+rm -f zappaf.tar.gz
+cd /home/foxr
+wget www.nku.edu/~foxr/linux/humor.tar.gz
+tar -xzf humor.tar.gz
+rm -f humor.tar.gz
+cd /home/Student/DUMMY-DIRECTORY
+chmod 755 directory3
+mandb
 
